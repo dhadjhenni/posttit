@@ -1,6 +1,86 @@
 .post {
-    background: #fff;
-    margin-block-end: 40px;
-    border-radius: 20px;
+    margin-block-end: 20px;
+    border-radius: 10px;
     padding: 20px;
+    transition: all 0.2s ease;
+    color: #000;
+    position: relative;
+    display: flex;
+    gap: 20px;
+
+    button {
+        border: 0;
+        border-radius: 5px;
+        color: #666;
+        padding: 5px 10px;
+        cursor: pointer;
+        background: transparent;
+        transition: all 0.2s ease;
+    }
+
+    button:hover {
+        background: #ccc;
+    }
+
+    h2 {
+        margin: 0 0 5px 0;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+}
+
+.post:hover {
+    background: rgba(0, 0, 0, 0.05);
+
+    .post-vote {
+        background: transparent;
+    }
+}
+
+.post:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background: #ccc;
+    opacity: 0.5;
+    height: 1px;
+    width: 100%;
+}
+
+.post-subreddit {
+    color: #666;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-meta {
+    color: #666;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.post-vote {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #f3f3f3;
+    transition: all 0.2s ease;
+
+    span {
+        text-align: center;
+        display: block;
+        padding: 5px 0;
+        font-weight: 400;
+        font-size: 1.8rem;
+        color: #666;
+    }
 }

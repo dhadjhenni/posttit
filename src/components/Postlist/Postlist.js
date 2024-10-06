@@ -10,8 +10,11 @@ function Postlist() {
     useEffect(() => {
         // This is just for demonstration. In a real app, you'd fetch posts from an API.
         const initialPosts = [
-            { id: 1, title: 'First Post', content: 'This is the first post content', author: 'John Doe', date: '2023-06-01' },
+            { id: 1, title: 'I finished the Armory passes and it turns out you can buy even more in the same account after you finished them', content: 'This is the first post content', author: 'John Doe', date: '2023-06-01' },
             { id: 2, title: 'Second Post', content: 'This is the second post content', author: 'Jane Smith', date: '2023-06-02' },
+            { id: 3, title: 'Second Post', content: 'This is the second post content', author: 'Jane Smith', date: '2023-06-02' },
+            { id: 4, title: 'I finished the Armory passes and it turns out you can buy even more in the same account after you finished them', content: 'This is the second post content', author: 'Jane Smith', date: '2023-06-02' },
+            { id: 5, title: 'Second Post', content: 'This is the second post content', author: 'Jane Smith', date: '2023-06-02' },
         ];
 
         initialPosts.forEach((post) => dispatch(addPost(post)));

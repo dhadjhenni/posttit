@@ -6,6 +6,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <h1>Posttit</h1>
+                <p>A simple reddit client</p>
             </header>
 
             <Postlist />
@@ -14,4 +15,3 @@ function App() {
 }
 
 export default App;
-

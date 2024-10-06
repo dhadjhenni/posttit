@@ -21,7 +21,7 @@ function PostWithVotes({ id, title, content, author, date }) {
             content={content}
             author={author}
             date={date}>
-            <div className="vote">
+            <div className="post-vote">
                 <button onClick={onIncrementButtonClicked}>Up</button>
                 <span>{post ? post.votes : 0}</span>
                 <button onClick={onDecrementButtonClicked}>Down</button>
