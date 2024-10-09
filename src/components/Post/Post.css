@@ -5,8 +5,6 @@
     transition: all 0.2s ease;
     color: #000;
     position: relative;
-    display: flex;
-    gap: 20px;
 
     button {
         border: 0;
@@ -32,10 +30,26 @@
         font-size: 1.2rem;
         margin: 0;
     }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.post-inner {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
 }
 
 .post:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: #f5f5f5;
 
     .post-vote {
         background: transparent;
@@ -54,6 +68,10 @@
     width: 100%;
 }
 
+.post:last-child:after {
+    display: none;
+}
+
 .post-subreddit {
     color: #666;
 }
@@ -66,10 +84,14 @@
     color: #666;
     padding-top: 10px;
     width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
 }
 
 .post-vote {
     display: flex;
+    flex-grow: 0;
     flex-direction: column;
     border-radius: 10px;
     background: #f3f3f3;
@@ -83,4 +105,8 @@
         font-size: 1.8rem;
         color: #666;
     }
+}
+
+.post-comments {
+    padding-left: 60px;
 }

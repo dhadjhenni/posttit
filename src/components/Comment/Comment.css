@@ -1,0 +1,10 @@
+.comment {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-block-end: 1px solid #ccc;
+}
+
+.comment:last-child {
+    border-block-end: 0;
+}

@@ -4,18 +4,29 @@ const postSlice = createSlice({
     name: 'post',
     initialState: {
         posts: [],
+        userVotes: {}, // Add this to track user votes
     },
     reducers: {
         increment: (state, action) => {
-            const post = state.posts.find((post) => post.id === action.payload);
+            const { postId, userId } = action.payload;
+            const post = state.posts.find((post) => post.id === postId);
             if (post) {
-                post.votes += 1;
+                const currentVote = state.userVotes[userId]?.[postId] || 0;
+                if (currentVote <= 0) {
+                    post.votes += 1;
+                    state.userVotes[userId] = { ...state.userVotes[userId], [postId]: currentVote + 1 };
+                }
             }
         },
         decrement: (state, action) => {
-            const post = state.posts.find((post) => post.id === action.payload);
+            const { postId, userId } = action.payload;
+            const post = state.posts.find((post) => post.id === postId);
             if (post) {
-                post.votes -= 1;
+                const currentVote = state.userVotes[userId]?.[postId] || 0;
+                if (currentVote >= 0) {
+                    post.votes -= 1;
+                    state.userVotes[userId] = { ...state.userVotes[userId], [postId]: currentVote - 1 };
+                }
             }
         },
         addPost: (state, action) => {

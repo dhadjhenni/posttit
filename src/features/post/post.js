@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './postSlice';
 import Post from '../../components/Post/Post';
 
-function PostWithVotes({ id, title, content, author, date }) {
+function PostWithVotes({ id, title, content, author, date, currentUserId }) {
     const post = useSelector((state) => state.post.posts.find((post) => post.id === id));
     const dispatch = useDispatch();
 
     const onIncrementButtonClicked = () => {
-        dispatch(increment(id));
+        dispatch(increment({ postId: post.id, userId: currentUserId }));
     };
 
     const onDecrementButtonClicked = () => {
-        dispatch(decrement(id));
+        dispatch(decrement({ postId: post.id, userId: currentUserId }));
     };
 
     return (
